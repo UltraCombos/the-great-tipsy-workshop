@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+button{
+  @apply font-bold px-2 py-1 cursor-pointer leading-tight tracking-wide;
+}
+.control_button{
+  @apply aspect-square self-center rounded-full overflow-hidden text-wrap w-20;
+}
+
+input, textarea {
+  @apply border border px-2 w-full;
+}
+
+.util_button{
+  @apply border text-xs;
+}
