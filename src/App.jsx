@@ -72,13 +72,15 @@ function App() {
     <main className="flex flex-col p-4 h-screen gap-2">
       <Setting ref={refSetting} />
       <Debug/>
-      <section className="flex-1 flex flex-col p-2 gap-2 items-stretch justify-end overflow-hidden">
-        <History history={history} className="flex-1 overflow-y-auto mb-2"/>
+      <section className="flex-1 flex flex-col gap-2 items-stretch justify-end overflow-hidden">
+        <History history={history} className="flex-1 overflow-y-auto">
+          <button className="absolute top-0 left-0 !bg-pink-300 rounded-br-lg" onClick={() => setHistory([])}>clear</button>
+        </History>
         <div className="flex flex-row gap-2">
           <textarea ref={refInput} className="border border-gray-300 p-2 flex-1"/>
-          <button className="bg-blue-500 control_button" onClick={onSend}>send</button>
+          <button className="!bg-blue-500 control_button" onClick={onSend}>send</button>
           <Speech callback={onSend} onInput={(transcript) => { refInput.current.value = transcript; }}/>
-          <button className={`bg-gray-400 control_button ${TTS ? 'border-5' : ''}`} onClick={()=>setTTS(!TTS)}>TTS</button>
+          <button className={`bg-gray-400 control_button ${TTS ? 'selected' : ''}`} onClick={()=>setTTS(!TTS)}>TTS</button>
         </div>
       </section>
     </main>

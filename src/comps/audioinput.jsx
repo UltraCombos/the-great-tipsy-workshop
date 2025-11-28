@@ -58,11 +58,11 @@ export default function Speech({callback, onInput, language='zh-TW'}) {
 
     return (
         <>
-            <button className={`${audioInput ? "bg-red-100 border-5" : "bg-green-100"} control_button`} 
+            <button className={`${audioInput ? "selected" : ""} control_button`} 
                 onClick={audioInput ? stop : setup}>
                     {audioInput ? "stop audio input" : "start audio input"}
             </button>
-            <button className={`${autoSend? 'bg-green-200 border-5': 'bg-gray-200'} control_button`} onClick={()=>setAutoSend(pre=>!pre)}>
+            <button className={`${autoSend? 'selected': ''} control_button`} onClick={()=>setAutoSend(pre=>!pre)}>
                 {autoSend ? "disable" : "enable"} auto send
             </button>
         </>

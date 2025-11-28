@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+body{
+  @apply bg-[#222222] text-white;
+  font-family: 'Sora', sans-serif;
+}
+
 button{
   @apply font-bold px-2 py-1 cursor-pointer leading-tight tracking-wide;
+  @apply bg-white text-black hover:bg-green-200 active:bg-gray-300;
 }
 .control_button{
-  @apply aspect-square self-center rounded-full overflow-hidden text-wrap w-20;
+  @apply aspect-square self-center rounded-full overflow-hidden text-wrap w-20 text-[1rem] font-bold;
+}
+.control_button.selected{
+  @apply bg-green-500;
 }
 
 input, textarea {
@@ -13,4 +22,8 @@ input, textarea {
 
 .util_button{
   @apply border text-xs;
+} 
+
+.panel{
+  @apply flex flex-col gap-1 items-stretch text-sm border border-white;
 }
